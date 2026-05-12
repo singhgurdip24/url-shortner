@@ -28,7 +28,7 @@ async def shorten(request: Request, body: ShortenRequest, db: AsyncSession = Dep
 
     return ShortenResponse(
         code=link.code,
-        short_url=f"{config.base_url}/{link.code}",
-        original_url=link.original_url,
-        created_at=link.created_at.isoformat(),
+        shortUrl=f"{config.base_url}/{link.code}",
+        originalUrl=link.original_url,
+        createdAt=link.created_at.isoformat(),
     )

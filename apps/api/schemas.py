@@ -19,13 +19,13 @@ class ShortenRequest(BaseModel):
 
 class ShortenResponse(BaseModel):
     code: str
-    short_url: str
-    original_url: str
-    created_at: str
+    shortUrl: str
+    originalUrl: str
+    createdAt: str
 
 
 class StatsResponse(BaseModel):
     code: str
-    original_url: str
+    originalUrl: str
     clicks: int
-    created_at: str
+    createdAt: str

@@ -22,7 +22,7 @@ async def stats(code: str, db: AsyncSession = Depends(get_db)):
 
     return StatsResponse(
         code=link.code,
-        original_url=link.original_url,
+        originalUrl=link.original_url,
         clicks=link.clicks,
-        created_at=link.created_at.isoformat(),
+        createdAt=link.created_at.isoformat(),
     )
