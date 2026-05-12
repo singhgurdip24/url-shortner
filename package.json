@@ -1,0 +1,19 @@
+{
+  "name": "url-shortener",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:fresh": "bash scripts/dev.sh",
+    "build": "turbo run build",
+    "lint": "turbo run lint"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0"
+  },
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9"
+  }
+}
