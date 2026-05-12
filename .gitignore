@@ -31,3 +31,12 @@ Thumbs.db
 # Docker volumes / data
 postgres-data/
 redis-data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/

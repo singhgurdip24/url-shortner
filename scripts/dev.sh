@@ -17,8 +17,11 @@ until docker exec url_shortener_postgres pg_isready -U postgres >/dev/null 2>&1;
 done
 echo "  Postgres ready."
 
-echo "→ Applying Prisma schema..."
-pnpm --filter @url-shortener/api db:push --skip-generate
+echo "→ Applying database migrations..."
+(cd apps/api && alembic upgrade head)
 
-echo "→ Starting dev servers..."
-exec pnpm turbo run dev
+echo "→ Starting API (FastAPI)..."
+(cd apps/api && uvicorn main:app --reload --host 0.0.0.0 --port 3001) &
+
+echo "→ Starting web..."
+exec pnpm turbo run dev --filter=@url-shortener/web
