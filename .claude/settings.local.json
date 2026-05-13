@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git -C /Users/gurdipsingh/Desktop/url-shortner add .gitignore)",
+      "Bash(git -C /Users/gurdipsingh/Desktop/url-shortner commit -m ' *)"
     ]
   }
 }
