@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     port: int = 3001
+    environment: str = "development"
     allowed_origin: str = "http://localhost:5173"
     base_url: str = "http://localhost:3001"
     database_url: str = "postgresql://postgres:postgres@localhost:5432/urlshortener"
@@ -17,6 +18,10 @@ class Settings(BaseSettings):
         if url.startswith("postgresql://"):
             return url.replace("postgresql://", "postgresql+asyncpg://", 1)
         return url
+
+    @property
+    def is_production(self) -> bool:
+        return self.environment == "production"
 
 
 config = Settings()
